@@ -2,10 +2,12 @@
   "name": "mock-twitter",
   "version": "1.0.0",
   "description": "",
-  "main": "actions.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "production": "webpack -p"
+    "production": "webpack -p",
+    "lint": "eslint app/.; exit 0",
+    "fix": "eslint --fix app/.; exit 0"
   },
   "repository": {
     "type": "git",
@@ -28,8 +30,14 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.25.0",
+    "eslint": "^3.5.0",
+    "eslint-config-standard": "^6.0.1",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-standard": "^2.0.0",
     "html-webpack-plugin": "^2.22.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
