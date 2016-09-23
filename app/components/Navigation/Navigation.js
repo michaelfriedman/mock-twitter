@@ -12,7 +12,7 @@ function NavLinks ({isAuthed}) {
   ? <ul>
     <li><Link to='/' className={link}>{'Home'}</Link></li>
   </ul>
-  : <noscript />
+  : null
 }
 
 function ActionLinks ({isAuthed}) {
