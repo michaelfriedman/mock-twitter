@@ -74,6 +74,16 @@ export function handleDeleteLike (duckId, event) {
   }
 }
 
+export function setUsersLikes () {
+  return function (dispatch, getState) {
+    const uid = getState().users.authedId
+    dispatch(fetchingLikes())
+    fetchUsersLikes(uid)
+    .then((likes) => dispatch(fetchingLikesSuccess(likes)))
+    .catch((error) => dispatch(fetchLikesError(error)))
+  }
+}
+
 const initialState = {
   isFetching: false,
   error: ''
@@ -107,7 +117,7 @@ export default function usersLikes (state = initialState, action) {
       }
     case REMOVE_LIKE:
       return Object.keys(state)
-      .filter((duckid) => action.duckId !== duckId)
+      .filter((duckId) => action.duckId !== duckId)
       .reduce((prev, current) => {
         prev[current] = state[current]
         return prev

@@ -36,7 +36,7 @@ export function addSingleUsersDuck (uid, duckId) {
 
 const initialUsersDuckState = {
   lastUpdated: 0,
-  duckids: []
+  duckIds: []
 }
 
 function usersDuck (state = initialUsersDuckState, action) {
@@ -44,7 +44,7 @@ function usersDuck (state = initialUsersDuckState, action) {
     case ADD_SINGLE_USERS_DUCK:
       return {
         ...state,
-        duckIds: state.duckids.concat([action.duckId])
+        duckIds: state.duckIds.concat([action.duckId])
       }
     default:
       return state

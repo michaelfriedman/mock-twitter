@@ -129,7 +129,7 @@
 {
   type: FETCHING_REPLIES_SUCCESS,
   replies,
-  duckid,
+  duckId,
   lastUpdated: Date.now()
 }
 

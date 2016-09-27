@@ -17,7 +17,7 @@ function fetchingCountError (error) {
   }
 }
 
-function fetchingCountSuccess (duckid, count) {
+function fetchingCountSuccess (duckId, count) {
   return {
     type: FETCHING_COUNT_SUCCESS,
     duckId,
@@ -67,7 +67,7 @@ export default function likeCount (state = initialState, action) {
         ? state
         : {
           ...state,
-          [action.duckid]: count(state[action.duckId], action)
+          [action.duckId]: count(state[action.duckId], action)
         }
     default:
       return state
