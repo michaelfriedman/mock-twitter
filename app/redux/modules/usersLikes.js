@@ -29,7 +29,8 @@ function fetchingLikes () {
   }
 }
 
-function fetchingLikesError (error) {
+function fetchLikesError (error) {
+  console.warn(error)
   return {
     type: FETCHING_LIKES_ERROR,
     error: 'Error fetching likes.'
@@ -73,12 +74,12 @@ export function handleDeleteLike (duckId, event) {
   }
 }
 
-const intitalState = {
+const initialState = {
   isFetching: false,
   error: ''
 }
 
-export default function userLikes (state = intitalState, action) {
+export default function usersLikes (state = initialState, action) {
   const type = action.type
   switch (type) {
     case FETCHING_LIKES:
@@ -107,7 +108,7 @@ export default function userLikes (state = intitalState, action) {
     case REMOVE_LIKE:
       return Object.keys(state)
       .filter((duckid) => action.duckId !== duckId)
-      .reduce((prev, curent) => {
+      .reduce((prev, current) => {
         prev[current] = state[current]
         return prev
       }, {})
