@@ -333,7 +333,7 @@ export default function likeCount (state = initialState, action) {
         ? state
         : {
           ...state,
-          [action.duckid]: count(state[action.duckId], action)
+          [action.duckId]: count(state[action.duckId], action)
         }
     default:
       return state
@@ -344,7 +344,7 @@ export default function likeCount (state = initialState, action) {
 
 const initialUsersDuckState = {
   lastUpdated: 0,
-  duckids: []
+  duckIds: []
 }
 
 function usersDuck (state = initialUsersDuckState, action) {
@@ -352,7 +352,7 @@ function usersDuck (state = initialUsersDuckState, action) {
     case ADD_SINGLE_USERS_DUCK:
       return {
         ...state,
-        duckIds: state.duckids.concat([action.duckId])
+        duckIds: state.duckIds.concat([action.duckId])
       }
     default:
       return state
@@ -436,7 +436,7 @@ export default function userLikes (state = intitalState, action) {
       }
     case REMOVE_LIKE:
       return Object.keys(state)
-      .filter((duckid) => action.duckId !== duckId)
+      .filter((duckId) => action.duckId !== duckId)
       .reduce((prev, curent) => {
         prev[current] = state[current]
         return prev

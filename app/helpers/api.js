@@ -49,7 +49,7 @@ export function deleteFromUsersLikes (uid, duckId) {
   return ref.child(`usersLikes/${uid}/${duckId}`).set(null)
 }
 
-export function incrementNumberOfLikes (duckid) {
+export function incrementNumberOfLikes (duckId) {
   return ref.child(`likeCount/${duckId}`)
     .transaction((currentValue = 0) => currentValue + 1)
 }
