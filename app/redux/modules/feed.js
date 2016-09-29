@@ -98,7 +98,9 @@ export default function feed (state = initialState, action) {
     case RESET_NEW_DUCKS_AVAILABLE:
       return {
         ...state,
-        duckIds: [...state.newDucksToAdd, ...state.duckIds]
+        duckIds: [...state.newDucksToAdd, ...state.duckIds],
+        newDucksToAdd: [],
+        newDucksAvailable: false
       }
     default:
       return state

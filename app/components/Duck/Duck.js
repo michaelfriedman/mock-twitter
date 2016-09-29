@@ -2,8 +2,11 @@ import React, { PropTypes } from 'react'
 import { formatTimestamp } from 'helpers/utils'
 import Reply from 'react-icons/lib/fa/mail-reply'
 import Star from 'react-icons/lib/fa/star'
+import {
+  duckContainer, contentContainer, avatar, actionContainer, header, text,
+  likeReplyContainer, icon, likedIcon, author } from './styles.css'
 
-Duck.PropTypes = {
+Duck.propTypes = {
   duck: PropTypes.shape({
     avatar: PropTypes.string.isRequired,
     duckId: PropTypes.string.isRequired,
@@ -22,11 +25,6 @@ Duck.PropTypes = {
   goToProfile: PropTypes.func.isRequired
 }
 
-import {
-  duckContainer, contentContainer, avatar, actionContainer,
-  header, text, likeReplyContainer, icon, likedIcon, author
-} from './styles.css'
-
 export default function Duck (props) {
   const starIcon = props.isLiked === true ? likedIcon : icon
   const starFn = props.isLiked === true ? props.handleDeleteLike : props.addAndHandleLike
@@ -42,7 +40,7 @@ export default function Duck (props) {
         </div>
         <div className={text}>{props.duck.text}</div>
         <div className={likeReplyContainer}>
-          {props.hidReplyBtn === true
+          {props.hideReplyBtn === true
             ? null
             : <Reply className={icon} />}
           <div className={actionContainer}>

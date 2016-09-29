@@ -42,7 +42,7 @@ html, body {
 .baseTextAreaContainer {
   display: flex;
   height: 110px;
-  margin: 10px
+  margin: 10px;
 }
 
 .baseTextArea {
@@ -90,5 +90,5 @@ html, body {
 }
 
 .clickable:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }

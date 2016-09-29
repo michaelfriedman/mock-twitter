@@ -15,15 +15,15 @@ const UserContainer = React.createClass({
     duckIds: PropTypes.array.isRequired,
     fetchAndHandleUsersDucks: PropTypes.func.isRequired,
     fetchAndHandleUser: PropTypes.func.isRequired,
-    lastUpdatedUser: PropTypes.number.isRequired,
-    lastUpdatedDucks: PropTypes.number.isRequired
+    lastUpdated: PropTypes.number.isRequired,
+    routeParams: PropTypes.shape({uid: PropTypes.string.isRequired})
   },
   componentDidMount () {
     const uid = this.props.routeParams.uid
-    if (this.props.noUser === true || staleUser(this.props.lastUpdatedUser)) {
+    if (this.props.noUser === true || staleUser(this.props.lastUpdated)) {
       this.props.fetchAndHandleUser(uid)
     }
-    if (this.props.noUser === true || staleDucks(this.props.lastUpdatedDucks)) {
+    if (this.props.noUser === true || staleDucks(this.props.lastUpdated)) {
       this.props.fetchAndHandleUsersDucks(uid)
     }
   },
@@ -34,8 +34,7 @@ const UserContainer = React.createClass({
       name={this.props.name}
       isFetching={this.props.isFetching}
       error={this.props.error}
-      duckIds={this.props.duckIds}
-      />
+      duckIds={this.props.duckIds} />
     )
   }
 })
@@ -44,14 +43,14 @@ function mapStateToProps ({users, usersDucks}, props) {
   const specificUsersDucks = usersDucks[props.routeParams.uid]
   const user = users[props.routeParams.uid]
   const noUser = typeof user === 'undefined'
+  const name = noUser ? '' : user.info.name
   return {
     noUser,
-    name: noUser ? '' : user.info.name,
+    name,
     isFetching: users.isFetching || usersDucks.isFetching,
     error: users.error || usersDucks.error,
     duckIds: specificUsersDucks ? specificUsersDucks.duckIds : [],
-    lastUpdatedUser: user ? user.lastUpdated : 0,
-    lastUpdatedDucks: specificUsersDucks ? specificUsersDucks.lastUpdated : 0
+    lastUpdated: specificUsersDucks ? specificUsersDucks.lastUpdated : 0
   }
 }
 

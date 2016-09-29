@@ -6,7 +6,7 @@ import { formatDuck } from 'helpers/utils'
 
 const { object, string, func, bool } = PropTypes
 
-Modal.PropTypes = {
+Modal.propTypes = {
   duckText: string.isRequired,
   isOpen: bool.isRequired,
   user: object.isRequired,
@@ -30,8 +30,6 @@ const modalStyles = {
 
 export default function Modal (props) {
   function submitDuck () {
-    console.log('Duck:', props.duckText)
-    console.log('User:', props.user)
     return props.duckFanout(formatDuck(props.duckText, props.user))
   }
 
