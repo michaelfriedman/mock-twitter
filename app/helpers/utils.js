@@ -1,4 +1,4 @@
-import { usersDucksExpriationLength, usersExpriationLength } from 'config/constants'
+import { usersDucksExpirationLength, usersExpirationLength } from 'config/constants'
 
 export function formatUserInfo (name, avatar, uid) {
   return {
@@ -28,9 +28,9 @@ function getMilliseconds (timestamp) {
 }
 
 export function staleDucks (timestamp) {
-  return getMilliseconds(timestamp) > usersDucksExpriationLength
+  return getMilliseconds(timestamp) > usersDucksExpirationLength
 }
 
 export function staleUser (timestamp) {
-  return getMilliseconds(timestamp) > usersExpriationLength
+  return getMilliseconds(timestamp) > usersExpirationLength
 }

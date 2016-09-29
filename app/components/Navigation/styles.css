@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   color: #4a90e2;
-  font-size: 18px
+  font-size: 18px;
 }
 
 .navContainer {
@@ -22,7 +22,7 @@
 
 .navContainer li {
   list-style-type: none;
-  padding: 0 10px
+  padding: 0 10px;
 }
 
 .link {

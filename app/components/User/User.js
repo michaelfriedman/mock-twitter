@@ -3,7 +3,7 @@ import { userContainer, header } from './styles.css'
 import { errorMsg } from 'sharedStyles/styles.css'
 import { DuckContainer } from 'containers'
 
-User.PropTypes = {
+User.propTypes = {
   noUser: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   isFetching: PropTypes.bool.isRequired,
