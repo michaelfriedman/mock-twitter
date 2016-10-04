@@ -11,7 +11,7 @@ export default function getRoutes (checkAuth) {
         <Route path='feed' component={FeedContainer} onEnter={checkAuth} />
         <Route path='logout' component={LogoutContainer} />
         <Route path='/:uid' component={UserContainer} onEnter={checkAuth} />
-        <Route path='/duckDetail/:duckId' component={DuckDetailsContainer} onEnter={checkAuth} />
+        <Route path='duckDetail/:duckId' component={DuckDetailsContainer} onEnter={checkAuth} />
         <IndexRoute component={HomeContainer} onEnter={checkAuth} />
       </Route>
     </Router>
