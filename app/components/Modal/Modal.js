@@ -4,19 +4,6 @@ import { newDuckTop, pointer, newDuckInputContainer,
         newDuckInput, submitDuckBtn, darkBtn } from './styles.css'
 import { formatDuck } from 'helpers/utils'
 
-const { object, string, func, bool } = PropTypes
-
-Modal.propTypes = {
-  duckText: string.isRequired,
-  isOpen: bool.isRequired,
-  user: object.isRequired,
-  isSubmitDisabled: bool.isRequired,
-  openModal: func.isRequired,
-  duckFanout: func.isRequired,
-  closeModal: func.isRequired,
-  updateDuckText: func.isRequired
-}
-
 const modalStyles = {
   content: {
     width: 350,
@@ -26,6 +13,18 @@ const modalStyles = {
     background: '#ebebeb',
     padding: 0
   }
+}
+
+const { object, string, func, bool } = PropTypes
+Modal.propTypes = {
+  duckText: string.isRequired,
+  isOpen: bool.isRequired,
+  user: object.isRequired,
+  isSubmitDisabled: bool.isRequired,
+  openModal: func.isRequired,
+  duckFanout: func.isRequired,
+  closeModal: func.isRequired,
+  updateDuckText: func.isRequired
 }
 
 export default function Modal (props) {
