@@ -7,7 +7,7 @@ import { subHeader, darkBtn, errorMsg } from 'sharedStyles/styles.css'
 import { formatReply } from 'helpers/utils'
 
 Reply.propTypes = {
-  submit: PropTypes.func.isRequired,
+  submit: PropTypes.func.isRequired
 }
 
 function Reply ({submit}) {
@@ -39,7 +39,7 @@ DuckDetails.propTypes = {
   duckId: PropTypes.string.isRequired,
   isFetching: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
-  addAndHandleReply: PropTypes.func.isRequired,
+  addAndHandleReply: PropTypes.func.isRequired
 }
 
 export default function DuckDetails ({duckId, isFetching, authedUser, error, addAndHandleReply}) {
